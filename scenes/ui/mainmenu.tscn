@@ -1,0 +1,703 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://scripts/ui/mainmenu.gd" type="Script" id=1]
+[ext_resource path="res://resources/ui/mainmenu/Heading1.png" type="Texture" id=2]
+[ext_resource path="res://resources/ui/mainmenu/bg.png" type="Texture" id=3]
+[ext_resource path="res://resources/ui/mainmenu/enabled/button_play.png" type="Texture" id=4]
+[ext_resource path="res://resources/ui/mainmenu/disabled/button_play (1).png" type="Texture" id=5]
+[ext_resource path="res://resources/ui/mainmenu/enabled/button_about.png" type="Texture" id=6]
+[ext_resource path="res://resources/ui/mainmenu/enabled/button_options-settings.png" type="Texture" id=7]
+[ext_resource path="res://resources/ui/mainmenu/disabled/button_options-settings (1).png" type="Texture" id=8]
+[ext_resource path="res://resources/ui/mainmenu/disabled/button_about (1).png" type="Texture" id=9]
+[ext_resource path="res://resources/ui/mainmenu/disabled/button_exit-quit-to-os (1).png" type="Texture" id=10]
+[ext_resource path="res://resources/ui/mainmenu/enabled/button_exit-quit-to-os.png" type="Texture" id=11]
+[ext_resource path="res://resources/ui/PlexusBackground.tscn" type="PackedScene" id=12]
+[ext_resource path="res://resources/ui/mainmenu/beta.png" type="Texture" id=13]
+[ext_resource path="res://fonts/Hack/Hack-BoldItalic.ttf" type="DynamicFontData" id=14]
+[ext_resource path="res://fonts/Hack/Hack-Regular.ttf" type="DynamicFontData" id=15]
+[ext_resource path="res://resources/ui/mainmenu/enabled/button_back 1.png" type="Texture" id=16]
+[ext_resource path="res://resources/ui/mainmenu/disabled/button_back.png" type="Texture" id=17]
+[ext_resource path="res://fonts/Hack/Hack-Italic.ttf" type="DynamicFontData" id=18]
+[ext_resource path="res://default_theme.tres" type="Theme" id=20]
+
+[sub_resource type="DynamicFont" id=1]
+size = 25
+outline_size = 1
+outline_color = Color( 1, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 25
+outline_size = 1
+outline_color = Color( 0.0705882, 0, 1, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+outline_size = 1
+outline_color = Color( 0.552941, 0.501961, 0.14902, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 18
+outline_color = Color( 0.298039, 0.345098, 0.266667, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 18 )
+
+[node name="main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 20 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="elements" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background2" type="TextureRect" parent="elements"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 20 )
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlexusBackground" parent="elements" instance=ExtResource( 12 )]
+theme = ExtResource( 20 )
+maxDots = 40
+
+[node name="beta" type="Sprite" parent="elements"]
+position = Vector2( 800, -1 )
+rotation = 1.5708
+texture = ExtResource( 13 )
+centered = false
+
+[node name="Play" type="TextureButton" parent="elements"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -101.0
+margin_top = -100.0
+margin_right = 101.0
+margin_bottom = -47.0
+theme = ExtResource( 20 )
+keep_pressed_outside = true
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 4 )
+texture_focused = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Options" type="TextureButton" parent="elements"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -101.0
+margin_top = -26.5
+margin_right = 101.0
+margin_bottom = 26.5
+theme = ExtResource( 20 )
+keep_pressed_outside = true
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 7 )
+texture_focused = ExtResource( 8 )
+
+[node name="About" type="TextureButton" parent="elements"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -101.0
+margin_top = 50.0
+margin_right = 101.0
+margin_bottom = 103.0
+theme = ExtResource( 20 )
+keep_pressed_outside = true
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 6 )
+texture_focused = ExtResource( 9 )
+
+[node name="Exit" type="TextureButton" parent="elements"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -101.0
+margin_top = 125.0
+margin_right = 101.0
+margin_bottom = 178.0
+theme = ExtResource( 20 )
+keep_pressed_outside = true
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 11 )
+texture_focused = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="heading_picture" type="TextureRect" parent="elements"]
+anchor_right = 1.0
+margin_left = 107.0
+margin_right = -96.0
+margin_bottom = 96.0
+theme = ExtResource( 20 )
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="hidden_exit" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bg" type="ColorRect" parent="hidden_exit"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 20 )
+color = Color( 0.298039, 0.345098, 0.266667, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlexusBackground" parent="hidden_exit" instance=ExtResource( 12 )]
+theme = ExtResource( 20 )
+maxDots = 25
+
+[node name="yes" type="Button" parent="hidden_exit"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -231.5
+margin_top = -20.0
+margin_right = -162.5
+margin_bottom = 22.0
+theme = ExtResource( 20 )
+custom_fonts/font = SubResource( 1 )
+text = "Yes"
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="no" type="Button" parent="hidden_exit"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -4.0
+margin_top = -21.0
+margin_right = 260.0
+margin_bottom = 21.0
+theme = ExtResource( 20 )
+custom_fonts/font = SubResource( 2 )
+text = "No, take me back"
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="question" type="Label" parent="hidden_exit"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -228.0
+margin_top = -99.0
+margin_right = 266.0
+margin_bottom = -21.0
+theme = ExtResource( 20 )
+custom_fonts/font = SubResource( 3 )
+text = "Do you really want to exit?
+"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Options" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Options"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TabContainer" type="TabContainer" parent="Options/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Physics engine" type="Tabs" parent="Options/Panel/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 29.0
+margin_right = -5.0
+margin_bottom = -5.0
+theme = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionButton" type="OptionButton" parent="Options/Panel/TabContainer/Physics engine"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -87.5
+margin_top = -11.0
+margin_right = 87.5
+margin_bottom = 11.0
+theme = ExtResource( 20 )
+text = "Bullet"
+flat = true
+align = 1
+items = [ "Bullet", null, false, 0, null, "Default Physics", null, false, 1, null ]
+selected = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HDR" type="Tabs" parent="Options/Panel/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 29.0
+margin_right = -5.0
+margin_bottom = -5.0
+theme = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="hdr" type="CheckBox" parent="Options/Panel/TabContainer/HDR"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -38.5
+margin_top = -12.0
+margin_right = 38.5
+margin_bottom = 12.0
+theme = ExtResource( 20 )
+text = "Use HDR"
+flat = true
+align = 1
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VoxelCone Tracing" type="Tabs" parent="Options/Panel/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 29.0
+margin_right = -5.0
+margin_bottom = -5.0
+theme = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="vct" type="CheckBox" parent="Options/Panel/TabContainer/VoxelCone Tracing"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -63.0
+margin_top = -12.0
+margin_right = 63.0
+margin_bottom = 12.0
+theme = ExtResource( 20 )
+text = "Use VC tracing"
+flat = true
+align = 1
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Depth Subsurface Scattering" type="Tabs" parent="Options/Panel/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 29.0
+margin_right = -5.0
+margin_bottom = -5.0
+theme = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DSS" type="CheckBox" parent="Options/Panel/TabContainer/Depth Subsurface Scattering"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -122.5
+margin_top = -12.0
+margin_right = 122.5
+margin_bottom = 12.0
+theme = ExtResource( 20 )
+text = "Use Depth Subsurface Scattering"
+flat = true
+align = 1
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Subsurface Scattering" type="Tabs" parent="Options/Panel/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 29.0
+margin_right = -5.0
+margin_bottom = -5.0
+theme = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SSQ" type="OptionButton" parent="Options/Panel/TabContainer/Subsurface Scattering"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -24.5
+margin_top = -11.0
+margin_right = 24.5
+margin_bottom = 11.0
+theme = ExtResource( 20 )
+text = "Low"
+flat = true
+align = 1
+expand_icon = true
+items = [ "Low", null, false, 0, null, "Medium", null, false, 1, null, "High", null, false, 2, null ]
+selected = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Shadow filtering" type="Tabs" parent="Options/Panel/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 29.0
+margin_right = -5.0
+margin_bottom = -5.0
+theme = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sf" type="OptionButton" parent="Options/Panel/TabContainer/Shadow filtering"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -42.0
+margin_top = -11.0
+margin_right = 42.0
+margin_bottom = 11.0
+theme = ExtResource( 20 )
+text = "Disabled"
+flat = true
+align = 1
+expand_icon = true
+items = [ "Disabled", null, false, 0, null, "PCF 5", null, false, 1, null, "PCF 13", null, false, 2, null ]
+selected = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bilinear filtering" type="Tabs" parent="Options/Panel/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 29.0
+margin_right = -5.0
+margin_bottom = -5.0
+theme = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bf" type="CheckBox" parent="Options/Panel/TabContainer/Bilinear filtering"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -315.0
+margin_top = -12.0
+margin_right = 315.0
+margin_bottom = 12.0
+theme = ExtResource( 20 )
+text = "Use bilinear (Nearest) filtering (May cause visual artifacts, but reduces performance)"
+flat = true
+align = 1
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Anisotropic" type="Tabs" parent="Options/Panel/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 29.0
+margin_right = -5.0
+margin_bottom = -5.0
+theme = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="anisotropic_level" type="OptionButton" parent="Options/Panel/TabContainer/Anisotropic"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -21.0
+margin_top = -11.0
+margin_right = 21.0
+margin_bottom = 11.0
+theme = ExtResource( 20 )
+text = "2x"
+flat = true
+align = 1
+expand_icon = true
+items = [ "2x", null, false, 0, null, "4x", null, false, 1, null, "8x", null, false, 2, null, "16x", null, false, 3, null ]
+selected = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MSAA" type="Tabs" parent="Options/Panel/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 29.0
+margin_right = -5.0
+margin_bottom = -5.0
+theme = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="msaa_level" type="OptionButton" parent="Options/Panel/TabContainer/MSAA"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -21.0
+margin_top = -11.0
+margin_right = 21.0
+margin_bottom = 11.0
+theme = ExtResource( 20 )
+text = "2x"
+items = [ "2x", null, false, 0, null, "4x", null, false, 1, null, "8x", null, false, 2, null, "16x", null, false, 3, null ]
+selected = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Audio" type="Tabs" parent="Options/Panel/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 29.0
+margin_right = -5.0
+margin_bottom = -5.0
+theme = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="audio_volume" type="HSlider" parent="Options/Panel/TabContainer/Audio"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -8.0
+margin_bottom = 8.0
+theme = ExtResource( 20 )
+scrollable = false
+tick_count = 25
+ticks_on_borders = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="back2" type="TextureButton" parent="Options"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -101.0
+margin_top = -53.0
+margin_right = 101.0
+theme = ExtResource( 20 )
+texture_normal = ExtResource( 16 )
+texture_pressed = ExtResource( 17 )
+texture_hover = ExtResource( 16 )
+texture_focused = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="About" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bg" type="ColorRect" parent="About"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 20 )
+color = Color( 0.298039, 0.345098, 0.266667, 1 )
+
+[node name="PlexusBackground" parent="About" instance=ExtResource( 12 )]
+theme = ExtResource( 20 )
+maxDots = 15
+
+[node name="RichTextLabel" type="RichTextLabel" parent="About"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -41.0
+theme = ExtResource( 20 )
+custom_fonts/normal_font = SubResource( 4 )
+bbcode_enabled = true
+bbcode_text = "[rainbow freq=0.2 sat=10 val=20]
+[shake rate=5 level=10]
+[tornado radius=5 freq=2]
+[wave amp=50 freq=2]
+Written by Andrew (Andrej) Poženel AKA SDT - SloDevTeam in C#, C++ module and GDScript via Godot Engine
+2019-2020
+Version: 1.0 alpha (despite the main menu \"BETA\" tag)
+
+For more info visit the following sites:
+
+Facebook --> https://www.facebook.com/AndrewPozenel
+Twitter --> https://twitter.com/executable0053
+Github --> https://github.com/anderlli0053?tab=repositories
+
+You can also contact me via these 2 emails:
+
+anderlli0053@live.com
+andrej.pozenel@outlook.com
+[/wave]
+[/tornado]
+[/shake]
+[/rainbow]"
+text = "
+
+
+
+Written by Andrew (Andrej) Poženel AKA SDT - SloDevTeam in C#, C++ module and GDScript via Godot Engine
+2019-2020
+Version: 1.0 alpha (despite the main menu \"BETA\" tag)
+
+For more info visit the following sites:
+
+Facebook --> https://www.facebook.com/AndrewPozenel
+Twitter --> https://twitter.com/executable0053
+Github --> https://github.com/anderlli0053?tab=repositories
+
+You can also contact me via these 2 emails:
+
+anderlli0053@live.com
+andrej.pozenel@outlook.com
+
+
+
+"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="back" type="TextureButton" parent="About"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -101.0
+margin_top = -53.0
+margin_right = 101.0
+theme = ExtResource( 20 )
+texture_normal = ExtResource( 16 )
+texture_pressed = ExtResource( 17 )
+texture_hover = ExtResource( 16 )
+texture_focused = ExtResource( 17 )
+
+[node name="Play" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 20 )
+[connection signal="pressed" from="elements/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="elements/Options" to="." method="_on_Options_pressed"]
+[connection signal="pressed" from="elements/About" to="." method="_on_About_pressed"]
+[connection signal="pressed" from="elements/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="mouse_entered" from="elements/heading_picture" to="." method="_on_heading_picture_mouse_entered"]
+[connection signal="mouse_exited" from="elements/heading_picture" to="." method="_on_heading_picture_mouse_exited"]
+[connection signal="pressed" from="hidden_exit/yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="hidden_exit/no" to="." method="_on_no_pressed"]
+[connection signal="pressed" from="Options/back2" to="." method="_on_back2_pressed"]
+[connection signal="pressed" from="About/back" to="." method="_on_back_pressed"]

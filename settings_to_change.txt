@@ -1,0 +1,19 @@
+Change Physics Engine(Requires restart):  physics/3d	physics_engine
+
+Thread type: rendering/threads	thread_model
+
+Use HDR: rendering/quality		depth/hdr 	bool
+
+Use VoxelCone tracing: rendering/quality 	voxel_cone_tracing/high_quality	bool
+
+Use depth SS scattering: rendering/quality	subsurface_scattering/follow_surface	bool
+
+Subsurface Scattering quality: rendering/quality	subsurface_scattering/quality
+
+Shadow filtering: rendering/quality	shadows/filter_mode
+
+Use Nearest filter (bilinear filtering): rendering/quality	filters/use_nearest_mipmap_filter	bool
+
+Anisotropic filtering level(2x,4x,8x,16x): rendering/quality	filters/anisotropic_filter_level
+
+MSAA filtering level(2x,4x,8x,16x): rendering/quality	filters/msaa
